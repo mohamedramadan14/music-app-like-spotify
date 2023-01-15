@@ -117,7 +117,7 @@ const Player = ({ songs, activeSong }) => {
       <Box>
         <ReactHowler
           playing={playing}
-          src={activeSong?.url}
+          src={activeSong.url}
           ref={soundRef}
           onLoad={onLoad}
           onEnd={onEnd}
@@ -193,7 +193,7 @@ const Player = ({ songs, activeSong }) => {
               step={0.1}
               min={0}
               id="player-range"
-              max={duration ? duration.toFixed(2) : 0}
+              max={duration ? Number(duration.toFixed(2)) : 0}
               onChange={onSeek}
               value={[seek]}
               onChangeStart={() => setIsSeeking(true)}

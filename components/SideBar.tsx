@@ -4,7 +4,6 @@ import {
   List,
   ListItem,
   ListIcon,
-  Center,
   LinkBox,
   LinkOverlay,
 } from '@chakra-ui/layout'
@@ -50,8 +49,8 @@ const musicMenu = [
 ]
 
 const Sidebar = () => {
-  const { playlists, isError, isLoading } = usePlaylist()
-
+  const { playlists, isLoading } = usePlaylist()
+  if (isLoading) return <div>Loading....</div>
   return (
     <Box
       width="100%"
